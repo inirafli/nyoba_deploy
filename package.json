@@ -5,7 +5,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "build": "parcel build src/index.html",
-    "serve": "serve dist",
+    "serve": "serve dist -s",
     "lint": "eslint src/**/*.js"
   },
   "keywords": [],
