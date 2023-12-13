@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html && copy _redirects dist",
     "serve": "serve dist -s",
     "lint": "eslint src/**/*.js"
   },
