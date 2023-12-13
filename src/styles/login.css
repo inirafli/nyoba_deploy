@@ -1,0 +1,251 @@
+:root {
+  /* Colors */
+  --primary: #3d5a80;
+  --sub-primary: #e0fbfc;
+  --secondary: #98c1d9;
+  --on-primary: #000000;
+  --on-secondary: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, a, button {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#login-page {
+  min-height: 100vh;
+  display: grid;
+  margin: 2rem 4rem;
+  grid-template-columns: 0.15fr 660px 1fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+button {
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.back-button svg {
+  color: var(--on-secondary);
+}
+
+.login-container {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  background-color: var(--on-secondary);
+  max-width: 660px;
+  height: fit-content;
+  padding: 4rem 3rem;
+  border-radius: 3rem;
+  gap: 2rem;
+}
+
+.login-container h2 {
+  align-self: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+#login-form {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 1.25rem;
+  gap: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: .25rem;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 0.75rem;
+  font-size: 1.15rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.input-container {
+  display: relative;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.input-container label {
+  font-weight: 400;
+}
+
+input[type="checkbox"] {
+  margin: 0 .75rem 0 .25rem;
+  transform: scale(1.75);
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background-color: var(--primary);
+  color: var(--on-secondary);
+  border: 2px solid var(--primary);
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.login-container p {
+  align-self: center;
+  text-align: center;
+}
+
+.login-container p a {
+  color: var(--primary);
+}
+
+.login-headline h1 {
+  color: var(--on-secondary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.login-headline p {
+  color: var(--on-secondary);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.error-message {
+  display: none;
+  font-size: 1.15rem;
+  padding: .5rem 1rem;
+  border: 1.25px solid red;
+  border-radius: .5rem;
+  color: red;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 1440px) {
+  .login-container {
+      gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 1340px) {
+  #login-page {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 3rem 0;
+  }
+
+  .back-button {
+      order: 1;
+  }
+
+  .login-container {
+      order: 3;
+      margin: 0 auto;
+  }
+
+  .login-headline {
+      order: 2;
+      width: 100%;
+      grid-column: span 2;
+      text-align: center;
+  }
+
+  .login-headline h1 {
+      font-size: 1.75rem;
+  }
+
+  .login-headline p {
+      font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #login-page {
+      margin: 2rem;
+      gap: 2.25rem 0;
+  }
+
+  .back-button svg {
+      width: 44px;
+  }
+
+  .login-container {
+      padding: 2rem;
+      border-radius: 1rem;
+  }
+
+  .login-container h2 {
+      font-size: 1.25rem;
+  }
+
+  #login-form {
+      gap: 1.25rem;
+  }
+
+  label {
+      font-size: .85rem;
+  }
+
+  input {
+      font-size: .75rem;
+  }
+
+  .input-container {
+      margin: .75rem 0 .5rem -3px;
+  }
+
+  input[type="checkbox"] {
+      margin-right: .5rem;
+      transform: scale(1.25);
+  }
+
+  .login-button {
+      margin: 0;
+      padding: .75rem;
+      font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .login-container p {
+      font-size: .85rem;
+  }
+
+  .login-headline h1 {
+      font-size: 1.5rem;
+  }
+
+  .login-headline p {
+      font-size: 1rem;
+  }
+}

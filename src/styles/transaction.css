@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu:wght@300&display=swap");
+
+:root {
+  /* Colors */
+  --primary: #3d5a80;
+  --sub-primary: #e0fbfc;
+  --secondary: #98c1d9;
+  --on-primary: #000000;
+  --on-secondary: #ffffff;
+  --ubuntu: "Ubuntu", sans-serif;
+  --sans: "Open Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+button {
+  font-family: var(--ubuntu);
+}
+
+#mainHeader {
+  position: sticky;
+  top: 0;
+  background-color: var(--on-secondary);
+  z-index: 1000;
+}
+
+.main-app-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: var(--on-secondary);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-app-bar-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-app-bar-title img {
+  width: 48px;
+}
+
+.main-app-title {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.main-nav-list {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  gap: 1rem 2.5rem;
+}
+
+.main-menu-icon {
+  display: none;
+  padding: 4px 6px 0;
+  border-radius: 8px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.main-menu-icon svg {
+  color: var(--primary);
+}
+
+.main-nav-list .nav-item {
+  position: relative;
+}
+
+.main-nav-list .nav-item a.nav-link {
+  font-family: var(--sans);
+  font-size: 1rem;
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+  transition: background-color 300ms, transform 300ms;
+  display: block;
+}
+
+.main-nav-list .nav-item a.nav-link:hover {
+  background-color: var(--primary);
+  color: var(--on-secondary);
+}
+
+.main-nav-list .nav-item:active {
+  transform: scale(0.9);
+  transition: background-color 300ms, transform 300ms;
+}
+
+.main-nav a {
+  color: var(--on-primary);
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.main-nav-list .user-button {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav-list .user-button button {
+  background: none;
+  border: none;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: var(--on-primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.main-nav-list .user-button img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.transac-main {
+  flex: 1;
+  margin: 2rem 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: var(--primary);
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-title {
+  font-size: 1.45rem;
+  color: var(--on-secondary);
+  font-weight: 600;
+
+}
+
+.filter-container input[type="date"] {
+  padding: 11px;
+  border: 1px solid var(--on-primary);
+  border-radius: 6px;
+  background-color: var(--on-secondary);
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  width: 260px;
+}
+
+.filter-container span {
+  font-size: 3rem;
+  font-family: var(--ubuntu);
+  font-weight: 800;
+  color: var(--on-secondary);
+}
+
+.apply-button {
+  padding: 12px 24px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: var(--on-secondary);
+  color: var(--primary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.apply-button:active {
+  transform: scale(0.9);
+  transition: transform 300ms;
+}
+
+.transac-content {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#detailTransaction {
+  display: block;
+}
+
+.clickable-row {
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background-color: var(--primary);
+  color: var(--on-secondary);
+}
+
+.table-title {
+  display: flex;
+  padding: 1.5rem;
+  font-size: 1.15rem;
+  justify-content: center;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  background-color: var(--primary);
+  color: var(--sub-primary);
+  text-align: center;
+}
+
+.transac-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--primary);
+  border-width: 0 1px;
+}
+
+.transac-table th,
+.transac-table td {
+  border-bottom: 1px solid var(--primary);
+  padding: 12px;
+  text-align: center;
+}
+
+.transac-table th {
+  background-color: var(--sub-primary);
+  padding: 1.25rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+
+.transac-table td {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 2rem 1.25rem;
+}
+
+.transac-table .special-row {
+  background-color: var(--secondary);
+  text-align: center;
+}
+
+.transac-table .special-row td {
+  font-family: var(--sans);
+  font-weight: 600;
+}
+
+.special-row td {
+  padding: 1.25rem;
+}
+
+.transac-table .summary td {
+  font-family: var(--sans);
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--primary);
+  color: var(--on-secondary);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.footer-content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .main-app-title {
+    font-size: 1.55rem;
+  }
+
+  .main-app-bar img {
+    width: 30px;
+  }
+
+  .main-nav-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 76px;
+    right: -100%;
+    padding: 1.5rem;
+    border-radius: 12px 0px 0px 12px;
+    background-color: var(--sub-primary);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: right 0.3s ease;
+  }
+
+  .main-nav-list.active {
+    display: flex;
+    right: 0;
+  }
+
+  .nav-item {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a:hover {
+    color: var(--on-secondary);
+    background-color: var(--primary);
+  }
+
+  .main-menu-icon {
+    display: block;
+  }
+
+  .main-nav-list .user-button button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .main-nav-list .user-button img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .transac-main {
+    margin: 2rem;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .filter-container {
+    flex-flow: column wrap;
+    gap: 1.25rem;
+  }
+
+  .filter-container input[type="date"] {
+    width: 70%;
+  }
+
+  .filter-container span {
+    margin: -1.5rem 0;
+  }
+
+  .apply-button {
+    width: 70%;
+    align-self: center;
+  }
+
+  .table-title {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .main-app-bar {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .transac-main {
+    margin: 2rem 1rem;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-app-title {
+    font-size: 1.25rem;
+  }
+
+  .main-nav a,
+  .main-nav .user-button button {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .filter-title {
+    font-size: 1rem;
+  }
+
+  .filter-container input[type="date"] {
+    padding: 10px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .apply-button {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .table-title {
+    font-size: 0.65rem;
+    padding: 1rem;
+  }
+
+  .transac-table th {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .transac-table td {
+    font-size: 0.65rem;
+    padding: 1rem 0.25rem;
+  }
+
+  .transac-table .special-row td {
+    font-size: 0.75rem;
+  }
+
+  .special-row td {
+    padding: 1rem;
+  }
+
+  .transac-table .summary td {
+    font-family: var(--sans);
+  }
+
+  footer {
+    font-size: 0.75rem;
+  }
+}

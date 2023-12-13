@@ -1,0 +1,668 @@
+:root {
+  /* Colors */
+  --primary: #3d5a80;
+  --sub-primary: #e0fbfc;
+  --secondary: #98c1d9;
+  --on-primary: #000000;
+  --on-secondary: #ffffff;
+  --on-third: #6c757d;
+  --on-fourth: #ecf1f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+button {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.dash-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--on-secondary);
+  z-index: 1;
+}
+
+.dash-app-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: var(--on-secondary);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dash-app-bar__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dash-app-bar__title img {
+  width: 48px;
+}
+
+.dash-app-title {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.dash-nav-list {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  gap: 1rem 2.5rem;
+}
+
+.dash-menu-icon {
+  display: none;
+  padding: 4px 6px 0;
+  border-radius: 8px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.dash-menu-icon svg {
+  color: var(--primary);
+}
+
+.dash-nav-list .nav-item {
+  position: relative;
+}
+
+.dash-nav-list .nav-item a.nav-link {
+  font-family: var(--sans);
+  font-size: 1rem;
+  padding: 14px 28px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+  transition: background-color 300ms, transform 300ms;
+  display: block;
+}
+
+.dash-nav-list .nav-item a.nav-link:hover {
+  background-color: var(--primary);
+  color: var(--on-secondary);
+}
+
+.dash-nav-list .nav-item:active {
+  transform: scale(0.9);
+  transition: background-color 300ms, transform 300ms;
+}
+
+.dash-nav-list .dash-user-button {
+  display: flex;
+  align-items: center;
+}
+
+.dash-nav-list .dash-user-button button {
+  background: none;
+  border: none;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: var(--on-primary);
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.dash-nav-list .dash-user-button img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dash-main {
+  gap: 0;
+}
+
+.resourceSection {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary);
+  margin: 20px;
+  height: 15vh;
+  border-radius: 10px;
+  justify-content: space-evenly;
+}
+
+.subInput {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.subInput p {
+  color: var(--on-secondary);
+  margin: 10px;
+  font-family: var(--ubuntu);
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.inputForm {
+  width: 35vh;
+  height: 4vh;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid var(--on-fourth);
+  border-radius: 10px;
+  border: 0.5px solid var(--primary);
+  background-color: var(--on-secondary);
+  font-family: var(--ubuntu);
+  font-weight: light;
+  font-size: 13px;
+  text-align: center;
+  color: var(--on-third);
+  transition: background-color 0.3s; /* Add transition for a smooth effect */
+}
+
+.inputForm:focus {
+  outline: none;
+}
+
+.buttonResource {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.mainButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 15vh;
+  height: 5vh;
+  border-radius: 5px;
+  border: 0.5px solid var(--primary);
+  background: var(--on-secondary);
+  color: var(--primary);
+  font-family: var(--ubuntu);
+  font-weight: bold;
+  font-size: 15px;
+  position: relative;
+  transition: all 350ms;
+  overflow: hidden;
+}
+
+.mainButton:active,
+.navButton:active {
+  transform: scale(0.9);
+}
+
+#addProduct,
+#searchProduct,
+#checkoutCart {
+  background-color: var(--primary);
+  color: var(--on-secondary);
+}
+
+
+#removeProduct:hover,
+#resetCart:hover,
+#resetResource:hover {
+  background-color: #e5383b;
+  color: var(--on-secondary);
+  border: none;
+}
+
+.mainSearch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.productSection {
+  display: flex;
+  justify-content: center;
+}
+
+.mainProduct {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 6px;
+}
+
+.subProduct {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  gap: 15px;
+  justify-content: center;
+  background-color: var(--on-secondary);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0.5px 0.5px 5px var(--on-primary);
+}
+
+.productImage {
+  display: flex;
+  justify-content: center;
+}
+
+.productImage img {
+  width: 25vh;
+  height: 25vh;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+.productDescription h1 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--ubuntu);
+  color: var(--primary);
+}
+
+.productDescription h2 {
+  text-align: center;
+  font-size: 12px;
+  font-family: var(--sans);
+  color: var(--on-third);
+  margin: 5px;
+}
+
+.buttonProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-cartSection {
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-height: 70%;
+  width: 35%;
+  background-color: var(--primary-bg-color);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 0px 15px;
+  -webkit-border-radius: 0px 0px 0px 15px;
+  -moz-border-radius: 0px 0px 0px 15px;
+  border: 1.5px ridge var(--primary);
+  border-top: none;
+  border-right: none;
+  transform: translateX(100%);
+}
+
+.dash-cartSection.show {
+  display: block;
+  transform: translateX(0%);
+}
+
+.dash-cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary);
+  height: 7vh;
+  border-bottom: 1.5px solid var(--primary);
+}
+
+.dash-cartHeader p {
+  color: var(--primary);
+  font-size: 15px;
+  font-family: var(--ubuntu);
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.dash-cartHeader img {
+  width: 20px;
+  border: 1.4px solid var(--primary);
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: var(--on-secondary);
+}
+
+.dash-cartHeader img:active {
+  transition: all 350ms;
+  transform: scale(0.8);
+}
+
+.dash-cartList {
+  max-height: 40%;
+  overflow-y: auto;
+}
+
+.dash-cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--on-secondary);
+  height: 10vh;
+  border-bottom: 1px solid var(--primary);
+}
+
+.dash-cartItem img {
+  width: 7vh;
+  height: 7vh;
+  object-fit: fill;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  font-family: var(--ubuntu);
+  font-weight: bold;
+  color: var(--primary);
+  width: 50%;
+}
+
+#productPrice {
+  font-size: 12px;
+  font-family: var(--sans);
+  font-weight: bold;
+  color: var(--on-third);
+}
+
+.quantityItem {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: var(--ubuntu);
+  font-weight: bold;
+  color: var(--primary);
+  width: 20%;
+}
+
+.dash-cartFooter {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary);
+  border-top: 1.5px solid var(--primary);
+  height: 50%;
+  border-radius: 0px 0px 0px 15px;
+  -webkit-border-radius: 0px 0px 0px 15px;
+  -moz-border-radius: 0px 0px 0px 15px;
+}
+
+.totalFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  color: var(--primary);
+  font-size: 15px;
+  font-family: var(--ubuntu);
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.paymentFooter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  color: var(--primary);
+  font-size: 15px;
+  font-family: var(--ubuntu);
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.buttonFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1080px) {
+  .dash-app-title {
+    font-size: 1.55rem;
+  }
+
+  .dash-app-bar img {
+    width: 30px;
+  }
+
+  .dash-nav-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 76px;
+    right: -100%;
+    padding: 1.5rem;
+    border-radius: 12px 0px 0px 12px;
+    background-color: var(--sub-primary);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: right 0.3s ease;
+  }
+
+  .dash-nav-list.active {
+    display: flex;
+    right: 0;
+  }
+
+  .nav-item {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: left;
+  }
+
+  nav a:hover {
+    color: var(--on-secondary);
+    background-color: var(--primary);
+  }
+
+  .dash-menu-icon {
+    display: block;
+  }
+
+  .dash-nav-list .dash-user-button button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dash-nav-list .dash-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .dash-main {
+    margin: 4rem 2rem;
+  }
+
+  .dash-cartSection {
+    width: 70%;
+  }
+
+  .mainProduct {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .subProduct {
+    width: 80%;
+    gap: 5px;
+  }
+
+  .inputForm {
+    width: 25vh;
+    height: 4vh;
+    padding: 5px;
+    margin: 5px;
+    font-size: 13px;
+  }
+
+  .mainButton {
+    width: 90%;
+    height: 90%;
+  }
+
+  #searchProduct {
+    width: auto;
+    height: auto;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+  .resourceSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttonResource {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .dash-accountHeader {
+    display: none;
+  }
+
+  .resourceSection {
+    margin-top: auto;
+    flex-direction: column;
+    height: 25vh;
+    justify-content: space-between;
+  }
+
+  .subInput {
+    flex-flow: column wrap;
+    gap: 1.25rem;
+  }
+
+  #transactionDate {
+    width: 30vh;
+  }
+
+  .buttonResource {
+    width: 70%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .mainSearch {
+    margin-left: 0px;
+  }
+
+  .mainButton {
+    width: 50%;
+    padding: 5px;
+    width: 10vh;
+    height: 4vh;
+  }
+
+  .mainProduct {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-cartSection {
+    width: 98%;
+  }
+
+}
+
+@media screen and (max-width: 660px) {
+  .dash-app-bar {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .dash-main {
+    margin: 2rem 1rem;
+  }
+
+  .mainProduct {
+    place-items: center;
+  }
+
+  .subInput input[type="date"] {
+    padding: 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .mainSearch {
+    align-content: center;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dash-app-title {
+    font-size: 1.25rem;
+  }
+
+  .dash-nav a,
+  .dash-nav .user-button button {
+    font-size: 1rem;
+  }
+
+  .resourceSection subInput p {
+    font-size: 1.15rem;
+  }
+
+  .subInput input[type="date"] {
+    padding: 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .buttonResource {
+    padding: 0.85rem;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.75rem;
+  }
+}
